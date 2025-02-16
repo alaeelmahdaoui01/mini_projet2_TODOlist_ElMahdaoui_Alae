@@ -47,8 +47,12 @@ function todosfiltre(todoPhrase) {
 
 
 // filtre des todos de la liste en fonction de l'input de l'utilisateur 
-const todoInput = document.querySelector(".search1"); // la barre du input 
+const todoInput = document.querySelector(".search input"); // la barre du input 
 todoInput.addEventListener('input', function() { // on utilise 'input' pour que ceci ait lieu au fur et a mesure que l'utilisateur entre qq chose dans la barre de recherche
     const searchTodo = todoInput.value; // on obtient ce que l'utilisateur a entré dans la barre de recherche 
     todosfiltre(searchTodo);
+});
+
+document.querySelector(".search").addEventListener('submit', function(e) { // pour eviter d'actualiser la page quand on clique sur entrer 
+    e.preventDefault();
 });
